@@ -1,5 +1,11 @@
-node_modules
-# Keep environment variables out of version control
+# Bancos de Dados locais
+dev.db
+*.db-journal
+
+# Pastas geradas pelo Prisma
+src/generated/
+
+# Variáveis de ambiente
 .env
 
-/src/generated/prisma
+node_modules
