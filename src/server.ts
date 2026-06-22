@@ -1,15 +1,15 @@
 import express from 'express';
+import cors from 'cors'; // 1. Importamos o cors
 import { routes } from './routes.js';
 
 const app = express();
 
-// Informamos ao Express que vamos trabalhar com requisições no formato JSON
-app.use(express.json());
+// 2. Liberamos a API para receber requisições de outras portas/IPs
+app.use(cors());
 
-// Injetamos as nossas rotas no aplicativo
+app.use(express.json());
 app.use(routes);
 
-// Iniciamos o servidor na porta 3333
 app.listen(3333, () => {
-  console.log('🚀 Servidor da Academia rodando na porta 3333!');
+  console.log('🚀 Server is running on port 3333');
 });
